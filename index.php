@@ -30,6 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $num1 + $num2;
         } elseif ($operation == "subtract") {
             $result = $num1 - $num2;
+        } elseif ($operation == "multiply") {
+            $result = $num1 * $num2;
+        } elseif ($operation == "divide") {
+            if ($num2 == 0) {
+                throw new Exception("No se puede dividir por cero.");
+            }
+            $result = $num1 / $num2;
         } else {
             throw new Exception("Operación inválida.");
         }
@@ -129,6 +136,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <select id="operation" name="operation" class="form-select">
                 <option value="sum">Suma</option>
                 <option value="subtract">Resta</option>
+                <option value="multiply">Multiplicación</option>
+                <option value="divide">División</option>
             </select>
             
             <button type="submit" class="btn">Calcular</button>
