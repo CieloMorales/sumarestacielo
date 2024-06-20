@@ -1,4 +1,7 @@
 <?php
+
+//TODAS LAS OPERACIONES (SUMA, RESTA MULTIPLICAICÓN Y DIVISÓN) listas para subir a la rama develop
+
 // Validación de datos
 function validateInput($data) {
     if (!is_numeric($data)) {
